@@ -1,17 +1,17 @@
-// Copyright (c) 202X Claire Bedrossian All rights reserved
+// Copyright (c) 2023 Claire Bedrossian All rights reserved
 //
 // Created by: Claire Bedrossian
-// Created on: XXX 202X
+// Created on: Jan 2023
 // This file contains the JS functions for index.html
 
 "use strict"
 
 /**
- * Check servie worker.
+ * Check service worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
-    scope: "/ICS2O-PWA-Test/",
+  navigator.serviceWorker.register("/ICS2O-Assignment-05-JS/sw.js", {
+    scope: "/ICS2O-Assignment-05-JS/",
   })
 }
 
@@ -19,5 +19,17 @@ if (navigator.serviceWorker) {
  * This function displays an alert.
  */
 function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+  var numM = parseFloat(document.getElementById("num-m").value)
+  var numX = parseFloat(document.getElementById("num-x").value)
+  var numB = parseFloat(document.getElementById("num-b").value)
+
+  var product = numB
+  var counter = 0
+
+  while (counter < Math.abs(numX)) {
+    counter++
+    product = product + Math.abs(numM)
+    document.getElementById("x-values").innerHTML += " x = " + counter + "</br>"
+    document.getElementById("y-values").innerHTML += " y = " + product + "</br>"
+}
 }
